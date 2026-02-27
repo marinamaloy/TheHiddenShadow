@@ -204,226 +204,210 @@
 </div>
 </div>
 <!-- 替换用：柜门自动开合（缩小的柜子 + 产品图 + 视频链接） -->
+<!-- Slide 2 - Cabinet -->
 <div class="ppt-slide !bg-[#0A0E17]" type="content">
-  <div class="absolute inset-0 bg-gradient-to-br from-[#0A0E17] via-[#1A2536] to-[#0A0E17]"></div>
-
-  <!-- 雾气效果（保留） -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="fog-particle absolute w-64 h-64 rounded-full bg-[#4A6D7C]/40 blur-3xl" style="top: 10%; left: 5%;"></div>
-    <div class="fog-particle absolute w-48 h-48 rounded-full bg-[#2C3E50]/15 blur-3xl" style="top: 60%; right: 10%; animation-delay: 2s;"></div>
-  </div>
-
-  <!-- 标题 -->
-  <div class="relative z-10 mb-6">
-    <div class="flex items-center gap-4 mb-2">
-      <div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
-        <span class="font-display text-2xl font-bold text-[#4A6D7C]">01</span>
-      </div>
-      <h2 class="font-display text-5xl font-bold text-[#C0C5CE]">柜门自动开合</h2>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0A0E17] via-[#1A2536] to-[#0A0E17]"></div>
+    <!-- 雾气效果 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="fog-particle absolute w-64 h-64 rounded-full bg-[#4A6D7C]/10 blur-3xl" style="top: 10%; left: 5%;"></div>
+        <div class="fog-particle absolute w-48 h-48 rounded-full bg-[#2C3E50]/15 blur-3xl" style="top: 60%; right: 10%; animation-delay: 2s;"></div>
     </div>
-    <div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent"></div>
-  </div>
-
-  <!-- 主体：左上小柜子预览 + 右侧产品图 + 视频链接 + 文字说明 -->
-  <div class="relative z-10 flex gap-8 h-[520px]">
-
-    <!-- 左侧列：小柜子预览（左上） -->
-    <div class="w-1/2">
-      <!-- 将 cabinet_after.png 放入一个小容器并定位到左上 -->
-      <div class="relative">
-        <!-- 放到左上角并缩小 -->
-        <div style="position: absolute; left: 24px; top: 8px; width: 260px; height: auto; z-index: 20;"
-             class="transform-gpu cabinet-preview">
-          <!-- 使用静态图片作为“cabinet after”的视觉。保留轻微浮动/呼吸动画 -->
-          <div class="cabinet">
-    <div class="door left-door"></div>
-    <div class="door right-door"></div>
-</div>
+    <!-- 标题区域 -->
+    <div class="relative z-10 mb-6">
+        <div class="flex items-center gap-4 mb-2">
+            <div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
+                <span class="font-display text-2xl font-bold text-[#4A6D7C]">01</span>
+            </div>
+            <h2 class="font-display text-5xl font-bold text-[#C0C5CE]">柜门自动开合</h2>
         </div>
-
-        <!-- 右侧（紧邻小柜子的）产品图片和视频缩略图 -->
-        <div style="margin-left: 320px; padding-top: 12px;">
-          <!-- 产品图 -->
-          <div class="w-[280px]">
-            <img src="./cabinet.png" alt="cabinet product" class="w-full h-auto rounded-md shadow-lg border border-[#2C3E50]/40" />
-            <p class="font-body text-center text-[#C0C5CE]/80 mt-2">cabinet.png</p>
-          </div>
-
-          <!-- 视频链接缩略图（可点击打开 GitHub） -->
-          <div class="mt-4">
-            <a href="https://github.com/yourname/yourrepo/blob/main/yourvideo.mp4" target="_blank" rel="noopener noreferrer" aria-label="打开视频到 GitHub">
-              <div class="relative inline-block w-[280px]">
-                <img src="./video.png" alt="视频缩略图" class="w-full h-auto rounded-md shadow-md border border-[#2C3E50]/30" />
-                <!-- 播放按钮覆盖 -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div class="w-14 h-14 rounded-full bg-[#4A6D7C]/70 flex items-center justify-center border border-white/10">
-                    <i class="fas fa-play text-white text-xl"></i>
-                  </div>
+        <div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent"></div>
+    </div>
+    <!-- 主体内容区域 - 重构左侧 -->
+    <div class="relative z-10 flex gap-8 h-[520px]">
+        <!-- 左侧：动画 + 图片 + 视频链接 -->
+        <div class="flex-1 flex flex-col gap-6">
+            <!-- 上部：动画和静态图并排 -->
+            <div class="flex items-start gap-4">
+                <!-- 柜子动画 (缩小版) -->
+                <div class="relative perspective-1000 flex-shrink-0">
+                    <!-- 冷色光晕 -->
+                    <div class="absolute -inset-8 bg-[#4A6D7C]/20 rounded-lg blur-2xl"></div>
+                    <!-- 柜子容器 - 尺寸缩小 -->
+                    <div class="relative w-[300px] h-[340px] preserve-3d">
+                        <!-- 柜体背景 -->
+                        <div class="absolute inset-0 bg-[#2C3E50]/80 rounded-sm"></div>
+                        <!-- 左柜门 -->
+                        <div class="cabinet-door-left absolute left-0 top-0 w-1/2 h-full bg-gradient-to-br from-[#3D2914] via-[#5C4024] to-[#3D2914] rounded-l-sm border-r border-[#1A2536]/50 shadow-2xl">
+                            <div class="absolute inset-2 bg-gradient-to-br from-[#4A3728] via-[#6B5035] to-[#4A3728] rounded-l-sm"></div>
+                            <!-- 门把手 -->
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-12 bg-gradient-to-b from-[#8B7355] via-[#A0826D] to-[#8B7355] rounded-full shadow-lg"></div>
+                            <!-- 木纹细节 -->
+                            <div class="absolute inset-4 opacity-30">
+                                <div class="h-full w-full bg-gradient-to-b from-transparent via-[#2C1810]/40 to-transparent"></div>
+                            </div>
+                        </div>
+                        <!-- 右柜门 -->
+                        <div class="cabinet-door-right absolute right-0 top-0 w-1/2 h-full bg-gradient-to-bl from-[#3D2914] via-[#5C4024] to-[#3D2914] rounded-r-sm border-l border-[#1A2536]/50 shadow-2xl">
+                            <div class="absolute inset-2 bg-gradient-to-bl from-[#4A3728] via-[#6B5035] to-[#4A3728] rounded-r-sm"></div>
+                            <!-- 门把手 -->
+                            <div class="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-12 bg-gradient-to-b from-[#8B7355] via-[#A0826D] to-[#8B7355] rounded-full shadow-lg"></div>
+                            <!-- 木纹细节 -->
+                            <div class="absolute inset-4 opacity-30">
+                                <div class="h-full w-full bg-gradient-to-b from-transparent via-[#2C1810]/40 to-transparent"></div>
+                            </div>
+                        </div>
+                        <!-- 柜内黑暗 -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-[140px] h-[280px] bg-[#0A0E17] opacity-90"></div>
+                        </div>
+                    </div>
+                    <!-- 雾气粒子环绕 -->
+                    <div class="absolute -inset-4 pointer-events-none">
+                        <div class="fog-particle absolute w-8 h-8 rounded-full bg-[#4A6D7C]/40 blur-sm" style="top: 20%; left: -10%;"></div>
+                        <div class="fog-particle absolute w-6 h-6 rounded-full bg-[#4A6D7C]/30 blur-sm" style="top: 60%; right: -5%; animation-delay: 1s;"></div>
+                        <div class="fog-particle absolute w-10 h-10 rounded-full bg-[#2C3E50]/35 blur-sm" style="bottom: 20%; left: 20%; animation-delay: 2s;"></div>
+                    </div>
                 </div>
-              </div>
-            </a>
-            <p class="font-body text-sm text-[#C0C5CE]/70 mt-2">点击观看示范视频（GitHub）</p>
-          </div>
+                <!-- 静态图片 cabinet.png -->
+                <div class="flex-shrink-0">
+                    <img src="cabinet.png" alt="Cabinet" class="w-40 h-auto rounded-lg shadow-2xl border border-[#4A6D7C]/30">
+                </div>
+            </div>
+            <!-- 下部：视频链接 -->
+            <div class="mt-2">
+                <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/raw/main/video.mp4" target="_blank" class="inline-block">
+                    <img src="video.png" alt="Watch Video" class="w-16 h-16 hover:scale-110 transition-transform duration-200">
+                </a>
+                <p class="text-[#C0C5CE]/60 text-sm mt-1">点击观看演示视频</p>
+            </div>
         </div>
-
-        <!-- 若需要，也可以把原来“柜门动画”保留为背景微动（可选） -->
-      </div>
-    </div>
-
-    <!-- 右侧列：说明文字（与原样式一致） -->
-    <div class="w-[420px] flex flex-col justify-center gap-6">
-      <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-        <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
-        <p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
-          舞台中央的双门柜子被无形之手操控，柜门
-          <span class="text-[#4A6D7C] font-semibold">缓慢向外打开</span>
-          ，仿佛在邀请观众窥视柜内的黑暗。停顿约1秒后，柜门又
-          <span class="text-[#4A6D7C] font-semibold">自动缓慢关闭</span>
-          ，整个过程循环2-3次，营造出一种看不见的存在正在操控一切的诡异氛围。
-        </p>
-      </div>
-
-      <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-        <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">技术参数</h3>
-        <div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
-          <div class="flex items-start gap-3">
-            <i class="fas fa-clock text-[#4A6D7C] mt-1"></i>
-            <span><strong>动画时长：</strong> 单次开合约6秒，循环2-3次</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <i class="fas fa-volume-up text-[#4A6D7C] mt-1"></i>
-            <span><strong>音效配合：</strong> 轻微的"吱呀"声增强真实感</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <i class="fas fa-lightbulb text-[#4A6D7C] mt-1"></i>
-            <span><strong>灯光效果：</strong> 冷色光晕环绕，雾气粒子飘浮</span>
-          </div>
+        <!-- 右侧：说明文字 (保持不变) -->
+        <div class="w-[420px] flex flex-col justify-center gap-6">
+            <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+                <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
+                <p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
+                    舞台中央的双门柜子被无形之手操控，柜门
+                    <span class="text-[#4A6D7C] font-semibold">缓慢向外打开</span>
+                    ，仿佛在邀请观众窥视柜内的黑暗。停顿约1秒后，柜门又
+                    <span class="text-[#4A6D7C] font-semibold">自动缓慢关闭</span>
+                    ，整个过程循环2-3次，营造出一种看不见的存在正在操控一切的诡异氛围。
+                </p>
+            </div>
+            <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+                <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">技术参数</h3>
+                <div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
+                    <div class="flex items-start gap-3"><i class="fas fa-clock text-[#4A6D7C] mt-1"></i><span><strong>动画时长：</strong>单次开合约6秒，循环2-3次</span></div>
+                    <div class="flex items-start gap-3"><i class="fas fa-volume-up text-[#4A6D7C] mt-1"></i><span><strong>音效配合：</strong>轻微的"吱呀"声增强真实感</span></div>
+                    <div class="flex items-start gap-3"><i class="fas fa-lightbulb text-[#4A6D7C] mt-1"></i><span><strong>灯光效果：</strong>冷色光晕环绕，雾气粒子飘浮</span></div>
+                </div>
+            </div>
+            <div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
+                <p class="font-body text-sm text-[#C0C5CE]/70 italic"><i class="fas fa-info-circle text-[#4A6D7C] mr-2"></i>机制细节保密，仅在签约后提供完整技术文档</p>
+            </div>
         </div>
-      </div>
-
-      <div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
-        <p class="font-body text-sm text-[#C0C5CE]/70 italic">
-          <i class="fas fa-info-circle text-[#4A6D7C] mr-2"></i>
-          机制细节保密，仅在签约后提供完整技术文档
-        </p>
-      </div>
     </div>
-  </div>
-
-  <style>
-    /* 小柜子浮动呼吸效果（可根据需要调整） */
-    @keyframes previewFloat {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-6px) scale(1.02); }
-      100% { transform: translateY(0) scale(1); }
-    }
-    .cabinet-preview {
-      animation: previewFloat 4.5s ease-in-out infinite;
-      will-change: transform;
-    }
-    /* 小的阴影/边框微调（如果你使用 Tailwind 的内联样式不够，也可放在这里） */
-  </style>
 </div>
+   <!-- Curtaim -->     
+        <!-- Slide 3 - Curtain -->
+<div class="ppt-slide !bg-[#0A0E17]" type="content">
+    <img alt="curtain background" class="absolute inset-0 w-full h-full object-cover opacity-40" src="./curtain_window.jpg">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0E17]/60 via-[#1A2536]/40 to-[#0A0E17]/80"></div>
+    <!-- 标题区域 -->
+    <div class="relative z-10 mb-4">
+        <div class="flex items-center gap-4 mb-2">
+            <div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
+                <span class="font-display text-2xl font-bold text-[#4A6D7C]">02</span>
+            </div>
+            <h2 class="font-display text-5xl font-bold text-[#C0C5CE]">窗帘被人拨动</h2>
+        </div>
+        <div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent"></div>
+    </div>
+    <!-- 主体内容 -->
+    <div class="relative z-10 flex gap-8 h-[520px]">
+        <!-- 左侧：动画 + 图片 + 视频链接 -->
+        <div class="flex-1 flex flex-col gap-6">
+            <!-- 上部：动画和静态图并排 -->
+            <div class="flex items-start gap-4">
+                <!-- 窗帘动画 (缩小版) -->
+                <div class="relative flex-shrink-0">
+                    <!-- 窗户框架 - 缩小尺寸 -->
+                    <div class="relative w-[340px] h-[300px] bg-[#2C3E50] rounded-lg p-2 shadow-2xl">
+                        <!-- 窗玻璃（窗外景象） -->
+                        <div class="absolute inset-2 bg-gradient-to-b from-[#1A2536] via-[#2C3E50] to-[#0A0E17] rounded overflow-hidden">
+                            <!-- 窗外模糊树影 -->
+                            <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0E17] to-transparent"></div>
+                            <div class="absolute top-6 left-6 w-16 h-24 bg-[#1A2536]/50 rounded-full blur-xl"></div>
+                            <div class="absolute top-12 right-12 w-12 h-18 bg-[#1A2536]/40 rounded-full blur-lg"></div>
+                            <!-- 黑影闪过 -->
+                            <div class="shadow-flash absolute top-1/3 left-0 w-20 h-32 bg-[#0A0E17]/70 blur-md rounded-full"></div>
+                        </div>
+                        <!-- 窗框十字 -->
+                        <div class="absolute top-2 bottom-2 left-1/2 w-0.5 bg-[#2C3E50] -translate-x-1/2"></div>
+                        <div class="absolute left-2 right-2 top-1/2 h-0.5 bg-[#2C3E50] -translate-y-1/2"></div>
+                        <!-- 左侧窗帘 -->
+                        <div class="curtain-wave absolute left-2 top-2 bottom-2 w-[calc(50%-6px)] bg-gradient-to-r from-[#C0C5CE]/25 via-[#C0C5CE]/15 to-transparent backdrop-blur-sm">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A6D7C]/10 to-transparent"></div>
+                            <div class="absolute inset-0 flex flex-col justify-evenly">
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                            </div>
+                        </div>
+                        <!-- 右侧窗帘 -->
+                        <div class="absolute right-2 top-2 bottom-2 w-[calc(50%-6px)] bg-gradient-to-l from-[#C0C5CE]/20 via-[#C0C5CE]/10 to-transparent backdrop-blur-sm">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A6D7C]/10 to-transparent"></div>
+                            <div class="absolute inset-0 flex flex-col justify-evenly">
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                                <div class="h-px bg-[#C0C5CE]/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 震动效果层 (可选，可保留但设为不震动或减小) -->
+                    <div class="absolute inset-0 pointer-events-none border-2 border-[#4A6D7C]/20 rounded-lg"></div>
+                    <!-- 雾气效果 -->
+                    <div class="absolute -bottom-4 left-0 right-0 h-8 bg-gradient-to-t from-[#4A6D7C]/20 to-transparent blur-xl"></div>
+                </div>
+                <!-- 静态图片 window.png -->
+                <div class="flex-shrink-0">
+                    <img src="window.png" alt="Window" class="w-40 h-auto rounded-lg shadow-2xl border border-[#4A6D7C]/30">
+                </div>
+            </div>
+            <!-- 下部：视频链接 -->
+            <div class="mt-2">
+                <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/raw/main/video.mp4" target="_blank" class="inline-block">
+                    <img src="video.png" alt="Watch Video" class="w-16 h-16 hover:scale-110 transition-transform duration-200">
+                </a>
+                <p class="text-[#C0C5CE]/60 text-sm mt-1">点击观看演示视频</p>
+            </div>
+        </div>
+        <!-- 右侧：说明文字 (保持不变) -->
+        <div class="w-[420px] flex flex-col justify-center gap-6">
+            <div class="bg-[#1A2536]/70 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+                <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
+                <p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
+                    半透明的纱质窗帘仿佛被<span class="text-[#4A6D7C] font-semibold">无形的手从一侧拨动</span>，向另一侧飘起并产生<span class="text-[#4A6D7C] font-semibold">波浪形移动</span>。窗帘先向左飘动，然后慢慢自然回落，整个过程如同有人从窗边走过时不经意地触碰了窗帘。
+                </p>
+            </div>
+            <div class="bg-[#1A2536]/70 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+                <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">增强效果</h3>
+                <div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
+                    <div class="flex items-start gap-3"><i class="fas fa-wind text-[#4A6D7C] mt-1"></i><span><strong>窗框震动：</strong>窗帘飘动时窗框轻微颤抖</span></div>
+                    <div class="flex items-start gap-3"><i class="fas fa-ghost text-[#4A6D7C] mt-1"></i><span><strong>黑影闪过：</strong>窗外快速闪过模糊人影</span></div>
+                    <div class="flex items-start gap-3"><i class="fas fa-cloud text-[#4A6D7C] mt-1"></i><span><strong>雾气弥漫：</strong>窗边飘浮神秘雾气</span></div>
+                </div>
+            </div>
+            <div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
+                <p class="font-body text-sm text-[#C0C5CE]/70 italic"><i class="fas fa-info-circle text-[#4A6D7C] mr-2"></i>技术细节受保密协议保护</p>
+            </div>
+        </div>
+    </div>
+</div>
+
         
         <div class="ppt-slide !bg-[#0A0E17]" type="content">
-<img alt="curtain background" class="absolute inset-0 w-full h-full object-cover opacity-40" src="./curtain_window.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-b from-[#0A0E17]/60 via-[#1A2536]/40 to-[#0A0E17]/80"></div>
-<!-- 标题区域 -->
-<div class="relative z-10 mb-4">
-<div class="flex items-center gap-4 mb-2">
-<div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
-<span class="font-display text-2xl font-bold text-[#4A6D7C]">02</span>
-</div>
-<h2 class="font-display text-5xl font-bold text-[#C0C5CE]">窗帘被人拨动</h2>
-</div>
-<div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent"></div>
-</div>
-<!-- 主体内容 -->
-<div class="relative z-10 flex gap-8 h-[520px]">
-<!-- 左侧：说明文字 -->
-<div class="w-[420px] flex flex-col justify-center gap-6">
-<div class="bg-[#1A2536]/70 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-<h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
-<p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
-                        半透明的纱质窗帘仿佛被<span class="text-[#4A6D7C] font-semibold">无形的手从一侧拨动</span>，向另一侧飘起并产生<span class="text-[#4A6D7C] font-semibold">波浪形移动</span>。窗帘先向左飘动，然后慢慢自然回落，整个过程如同有人从窗边走过时不经意地触碰了窗帘。
-                    </p>
-</div>
-<div class="bg-[#1A2536]/70 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-<h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">增强效果</h3>
-<div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
-<div class="flex items-start gap-3">
-<i class="fas fa-wind text-[#4A6D7C] mt-1"></i>
-<span><strong>窗框震动：</strong>窗帘飘动时窗框轻微颤抖</span>
-</div>
-<div class="flex items-start gap-3">
-<i class="fas fa-ghost text-[#4A6D7C] mt-1"></i>
-<span><strong>黑影闪过：</strong>窗外快速闪过模糊人影</span>
-</div>
-<div class="flex items-start gap-3">
-<i class="fas fa-cloud text-[#4A6D7C] mt-1"></i>
-<span><strong>雾气弥漫：</strong>窗边飘浮神秘雾气</span>
-</div>
-</div>
-</div>
-<div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
-<p class="font-body text-sm text-[#C0C5CE]/70 italic">
-<i class="fas fa-info-circle text-[#4A6D7C] mr-2"></i>
-                        技术细节受保密协议保护
-                    </p>
-</div>
-</div>
-<!-- 右侧：窗帘动画 -->
-<div class="flex-1 flex items-center justify-center">
-<div class="relative">
-<!-- 窗户框架 -->
-<div class="relative w-[480px] h-[440px] bg-[#2C3E50] rounded-lg p-3 shadow-2xl">
-<!-- 窗玻璃（窗外景象） -->
-<div class="absolute inset-3 bg-gradient-to-b from-[#1A2536] via-[#2C3E50] to-[#0A0E17] rounded overflow-hidden">
-<!-- 窗外模糊树影 -->
-<div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0E17] to-transparent"></div>
-<div class="absolute top-10 left-10 w-20 h-32 bg-[#1A2536]/50 rounded-full blur-xl"></div>
-<div class="absolute top-20 right-16 w-16 h-24 bg-[#1A2536]/40 rounded-full blur-lg"></div>
-<!-- 黑影闪过 -->
-<div class="shadow-flash absolute top-1/3 left-0 w-24 h-40 bg-[#0A0E17]/70 blur-md rounded-full"></div>
-</div>
-<!-- 窗框十字 -->
-<div class="absolute top-3 bottom-3 left-1/2 w-1 bg-[#2C3E50] -translate-x-1/2"></div>
-<div class="absolute left-3 right-3 top-1/2 h-1 bg-[#2C3E50] -translate-y-1/2"></div>
-<!-- 左侧窗帘 -->
-<div class="curtain-wave absolute left-3 top-3 bottom-3 w-[calc(50%-8px)] bg-gradient-to-r from-[#C0C5CE]/25 via-[#C0C5CE]/15 to-transparent backdrop-blur-sm">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A6D7C]/10 to-transparent"></div>
-<!-- 窗帘褶皱 -->
-<div class="absolute inset-0 flex flex-col justify-evenly">
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-</div>
-</div>
-<!-- 右侧窗帘 -->
-<div class="absolute right-3 top-3 bottom-3 w-[calc(50%-8px)] bg-gradient-to-l from-[#C0C5CE]/20 via-[#C0C5CE]/10 to-transparent backdrop-blur-sm">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A6D7C]/10 to-transparent"></div>
-<!-- 窗帘褶皱 -->
-<div class="absolute inset-0 flex flex-col justify-evenly">
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-<div class="h-px bg-[#C0C5CE]/10"></div>
-</div>
-</div>
-</div>
-<!-- 震动效果层 -->
-<div class="shake-effect absolute inset-0 pointer-events-none">
-<div class="w-full h-full border-2 border-[#4A6D7C]/20 rounded-lg"></div>
-</div>
-<!-- 雾气效果 -->
-<div class="absolute -bottom-8 left-0 right-0 h-16 bg-gradient-to-t from-[#4A6D7C]/20 to-transparent blur-xl"></div>
-</div>
-</div>
-</div>
-</div><div class="ppt-slide !bg-[#0A0E17]" type="content">
 <img alt="drink cup background" class="absolute inset-0 w-full h-full object-cover opacity-50" src="./drink_cup.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-br from-[#0A0E17]/70 via-[#1A2536]/50 to-[#0A0E17]/80"></div>
 <!-- 雾气粒子 -->
