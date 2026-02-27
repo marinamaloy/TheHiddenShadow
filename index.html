@@ -202,134 +202,127 @@
 <div class="w-2 h-2 rounded-full bg-[#4A6D7C] animate-pulse" style="animation-delay: 0.6s;"></div>
 </div>
 </div>
-</div><div class="ppt-slide !bg-[#0A0E17]" type="content">
-<div class="absolute inset-0 bg-gradient-to-br from-[#0A0E17] via-[#1A2536] to-[#0A0E17]">
 </div>
-<!-- 雾气效果 -->
-<div class="absolute inset-0 overflow-hidden pointer-events-none">
-<div class="fog-particle absolute w-64 h-64 rounded-full bg-[#4A6D7C]/40 blur-3xl" style="top: 10%; left: 5%;">
+<!-- 替换用：柜门自动开合（缩小的柜子 + 产品图 + 视频链接） -->
+<div class="ppt-slide !bg-[#0A0E17]" type="content">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0A0E17] via-[#1A2536] to-[#0A0E17]"></div>
+
+  <!-- 雾气效果（保留） -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="fog-particle absolute w-64 h-64 rounded-full bg-[#4A6D7C]/40 blur-3xl" style="top: 10%; left: 5%;"></div>
+    <div class="fog-particle absolute w-48 h-48 rounded-full bg-[#2C3E50]/15 blur-3xl" style="top: 60%; right: 10%; animation-delay: 2s;"></div>
+  </div>
+
+  <!-- 标题 -->
+  <div class="relative z-10 mb-6">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
+        <span class="font-display text-2xl font-bold text-[#4A6D7C]">01</span>
+      </div>
+      <h2 class="font-display text-5xl font-bold text-[#C0C5CE]">柜门自动开合</h2>
+    </div>
+    <div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent"></div>
+  </div>
+
+  <!-- 主体：左上小柜子预览 + 右侧产品图 + 视频链接 + 文字说明 -->
+  <div class="relative z-10 flex gap-8 h-[520px]">
+
+    <!-- 左侧列：小柜子预览（左上） -->
+    <div class="w-1/2">
+      <!-- 将 cabinet_after.png 放入一个小容器并定位到左上 -->
+      <div class="relative">
+        <!-- 放到左上角并缩小 -->
+        <div style="position: absolute; left: 24px; top: 8px; width: 260px; height: auto; z-index: 20;"
+             class="transform-gpu cabinet-preview">
+          <!-- 使用静态图片作为“cabinet after”的视觉。保留轻微浮动/呼吸动画 -->
+          <img src="./cabinet_after.png" alt="cabinet after" class="w-full h-auto rounded-md shadow-2xl" />
+        </div>
+
+        <!-- 右侧（紧邻小柜子的）产品图片和视频缩略图 -->
+        <div style="margin-left: 320px; padding-top: 12px;">
+          <!-- 产品图 -->
+          <div class="w-[280px]">
+            <img src="./cabinet.png" alt="cabinet product" class="w-full h-auto rounded-md shadow-lg border border-[#2C3E50]/40" />
+            <p class="font-body text-center text-[#C0C5CE]/80 mt-2">cabinet.png</p>
+          </div>
+
+          <!-- 视频链接缩略图（可点击打开 GitHub） -->
+          <div class="mt-4">
+            <a href="https://github.com/yourname/yourrepo/blob/main/yourvideo.mp4" target="_blank" rel="noopener noreferrer" aria-label="打开视频到 GitHub">
+              <div class="relative inline-block w-[280px]">
+                <img src="./video.png" alt="视频缩略图" class="w-full h-auto rounded-md shadow-md border border-[#2C3E50]/30" />
+                <!-- 播放按钮覆盖 -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div class="w-14 h-14 rounded-full bg-[#4A6D7C]/70 flex items-center justify-center border border-white/10">
+                    <i class="fas fa-play text-white text-xl"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <p class="font-body text-sm text-[#C0C5CE]/70 mt-2">点击观看示范视频（GitHub）</p>
+          </div>
+        </div>
+
+        <!-- 若需要，也可以把原来“柜门动画”保留为背景微动（可选） -->
+      </div>
+    </div>
+
+    <!-- 右侧列：说明文字（与原样式一致） -->
+    <div class="w-[420px] flex flex-col justify-center gap-6">
+      <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+        <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
+        <p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
+          舞台中央的双门柜子被无形之手操控，柜门
+          <span class="text-[#4A6D7C] font-semibold">缓慢向外打开</span>
+          ，仿佛在邀请观众窥视柜内的黑暗。停顿约1秒后，柜门又
+          <span class="text-[#4A6D7C] font-semibold">自动缓慢关闭</span>
+          ，整个过程循环2-3次，营造出一种看不见的存在正在操控一切的诡异氛围。
+        </p>
+      </div>
+
+      <div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
+        <h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">技术参数</h3>
+        <div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-clock text-[#4A6D7C] mt-1"></i>
+            <span><strong>动画时长：</strong> 单次开合约6秒，循环2-3次</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-volume-up text-[#4A6D7C] mt-1"></i>
+            <span><strong>音效配合：</strong> 轻微的"吱呀"声增强真实感</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-lightbulb text-[#4A6D7C] mt-1"></i>
+            <span><strong>灯光效果：</strong> 冷色光晕环绕，雾气粒子飘浮</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
+        <p class="font-body text-sm text-[#C0C5CE]/70 italic">
+          <i class="fas fa-info-circle text-[#4A6D7C] mr-2"></i>
+          机制细节保密，仅在签约后提供完整技术文档
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* 小柜子浮动呼吸效果（可根据需要调整） */
+    @keyframes previewFloat {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-6px) scale(1.02); }
+      100% { transform: translateY(0) scale(1); }
+    }
+    .cabinet-preview {
+      animation: previewFloat 4.5s ease-in-out infinite;
+      will-change: transform;
+    }
+    /* 小的阴影/边框微调（如果你使用 Tailwind 的内联样式不够，也可放在这里） */
+  </style>
 </div>
-<div class="fog-particle absolute w-48 h-48 rounded-full bg-[#2C3E50]/15 blur-3xl" style="top: 60%; right: 10%; animation-delay: 2s;">
-</div>
-</div>
-<!-- 标题区域 -->
-<div class="relative z-10 mb-6">
-<div class="flex items-center gap-4 mb-2">
-<div class="w-12 h-12 rounded-full bg-[#4A6D7C]/30 flex items-center justify-center border border-[#4A6D7C]/50">
-<span class="font-display text-2xl font-bold text-[#4A6D7C]">01</span>
-</div>
-<h2 class="font-display text-5xl font-bold text-[#C0C5CE]">柜门自动开合</h2>
-</div>
-<div class="ml-16 w-48 h-0.5 bg-gradient-to-r from-[#4A6D7C] to-transparent">
-</div>
-</div>
-<!-- 主体内容区域 -->
-<div class="relative z-10 flex gap-8 h-[520px]">
-<!-- 左侧：柜子动画 -->
-<div class="flex-1 flex items-center justify-center">
-<div class="relative perspective-1000">
-<!-- 冷色光晕 -->
-<div class="absolute -inset-8 bg-[#4A6D7C]/20 rounded-lg blur-2xl">
-</div>
-<!-- 柜子容器 -->
-<div class="relative w-[420px] h-[480px] preserve-3d">
-<!-- 柜体背景 -->
-<div class="absolute inset-0 bg-[#2C3E50]/80 rounded-sm">
-</div>
-<!-- 左柜门 -->
-<div class="cabinet-door-left absolute left-0 top-0 w-1/2 h-full bg-gradient-to-br from-[#3D2914] via-[#5C4024] to-[#3D2914] rounded-l-sm border-r border-[#1A2536]/50 shadow-2xl">
-<div class="absolute inset-2 bg-gradient-to-br from-[#4A3728] via-[#6B5035] to-[#4A3728] rounded-l-sm">
-</div>
-<!-- 门把手 -->
-<div class="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-12 bg-gradient-to-b from-[#8B7355] via-[#A0826D] to-[#8B7355] rounded-full shadow-lg">
-</div>
-<!-- 木纹细节 -->
-<div class="absolute inset-4 opacity-30">
-<div class="h-full w-full bg-gradient-to-b from-transparent via-[#2C1810]/40 to-transparent">
-</div>
-</div>
-</div>
-<!-- 右柜门 -->
-<div class="cabinet-door-right absolute right-0 top-0 w-1/2 h-full bg-gradient-to-bl from-[#3D2914] via-[#5C4024] to-[#3D2914] rounded-r-sm border-l border-[#1A2536]/50 shadow-2xl">
-<div class="absolute inset-2 bg-gradient-to-bl from-[#4A3728] via-[#6B5035] to-[#4A3728] rounded-r-sm">
-</div>
-<!-- 门把手 -->
-<div class="absolute left-3 top-1/2 -translate-y-1/2 w-3 h-12 bg-gradient-to-b from-[#8B7355] via-[#A0826D] to-[#8B7355] rounded-full shadow-lg">
-</div>
-<!-- 木纹细节 -->
-<div class="absolute inset-4 opacity-30">
-<div class="h-full w-full bg-gradient-to-b from-transparent via-[#2C1810]/40 to-transparent">
-</div>
-</div>
-</div>
-<!-- 柜内黑暗 -->
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="w-[200px] h-[400px] bg-[#0A0E17] opacity-90">
-</div>
-</div>
-</div>
-<!-- 雾气粒子环绕 -->
-<div class="absolute -inset-4 pointer-events-none">
-<div class="fog-particle absolute w-8 h-8 rounded-full bg-[#4A6D7C]/40 blur-sm" style="top: 20%; left: -10%;">
-</div>
-<div class="fog-particle absolute w-6 h-6 rounded-full bg-[#4A6D7C]/30 blur-sm" style="top: 60%; right: -5%; animation-delay: 1s;">
-</div>
-<div class="fog-particle absolute w-10 h-10 rounded-full bg-[#2C3E50]/35 blur-sm" style="bottom: 20%; left: 20%; animation-delay: 2s;">
-</div>
-</div>
-</div>
-</div>
-<!-- 右侧：说明文字 -->
-<div class="w-[420px] flex flex-col justify-center gap-6">
-<div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-<h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">效果描述</h3>
-<p class="font-body text-base text-[#C0C5CE]/90 leading-relaxed">
-                            舞台中央的双门柜子被无形之手操控，柜门
-                            <span class="text-[#4A6D7C] font-semibold">缓慢向外打开</span>
-                            ，仿佛在邀请观众窥视柜内的黑暗。停顿约1秒后，柜门又
-                            <span class="text-[#4A6D7C] font-semibold">自动缓慢关闭</span>
-                            ，整个过程循环2-3次，营造出一种看不见的存在正在操控一切的诡异氛围。
-                        </p>
-</div>
-<div class="bg-[#1A2536]/60 backdrop-blur-sm rounded-lg p-6 border border-[#4A6D7C]/30">
-<h3 class="font-display text-2xl font-bold text-[#4A6D7C] mb-4">技术参数</h3>
-<div class="space-y-3 font-body text-base text-[#C0C5CE]/90">
-<div class="flex items-start gap-3">
-<i class="fas fa-clock text-[#4A6D7C] mt-1">
-</i>
-<span>
-<strong>动画时长：</strong>
-                                    单次开合约6秒，循环2-3次
-                                </span>
-</div>
-<div class="flex items-start gap-3">
-<i class="fas fa-volume-up text-[#4A6D7C] mt-1">
-</i>
-<span>
-<strong>音效配合：</strong>
-                                    轻微的"吱呀"声增强真实感
-                                </span>
-</div>
-<div class="flex items-start gap-3">
-<i class="fas fa-lightbulb text-[#4A6D7C] mt-1">
-</i>
-<span>
-<strong>灯光效果：</strong>
-                                    冷色光晕环绕，雾气粒子飘浮
-                                </span>
-</div>
-</div>
-</div>
-<div class="bg-[#2C3E50]/40 rounded-lg p-4 border-l-4 border-[#4A6D7C]">
-<p class="font-body text-sm text-[#C0C5CE]/70 italic">
-<i class="fas fa-info-circle text-[#4A6D7C] mr-2">
-</i>
-                            机制细节保密，仅在签约后提供完整技术文档
-                        </p>
-</div>
-</div>
-</div>
-</div><div class="ppt-slide !bg-[#0A0E17]" type="content">
+        
+        <div class="ppt-slide !bg-[#0A0E17]" type="content">
 <img alt="curtain background" class="absolute inset-0 w-full h-full object-cover opacity-40" src="./curtain_window.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-b from-[#0A0E17]/60 via-[#1A2536]/40 to-[#0A0E17]/80"></div>
 <!-- 标题区域 -->
